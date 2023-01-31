@@ -20,7 +20,7 @@ class linkedList:
             lastNode = self.findLastNode()
             lastNode.next = newNode
            
-     def pop(self):
+    def pop(self):
        n = self.head
        n2 = None
        while(n.next != None):
