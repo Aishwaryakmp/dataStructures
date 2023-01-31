@@ -19,7 +19,15 @@ class linkedList:
             newNode = Node(data)
             lastNode = self.findLastNode()
             lastNode.next = newNode
-   
+           
+     def pop(self):
+       n = self.head
+       n2 = None
+       while(n.next != None):
+           n2 = n
+           n = n.next
+       n2.next = None
+      
     def print(self):
         n = self.head
         while (n!=None):
@@ -32,3 +40,6 @@ LL.push(3)
 LL.push(4)
 LL.push(5)
 LL.print()
+LL.pop()
+LL.print()
+
