@@ -19,7 +19,8 @@ class linkedList:
             newNode = Node(data)
             lastNode = self.findLastNode()
             lastNode.next = newNode
-           
+            
+    # popping last element        
     def pop(self):
        n = self.head
        n2 = None
@@ -27,6 +28,11 @@ class linkedList:
            n2 = n
            n = n.next
        n2.next = None
+    # popping first element
+    def popFirstElement(self):
+        value = self.head.data
+        self.head = self.head.next
+        return value
       
     def print(self):
         n = self.head
@@ -39,7 +45,11 @@ LL.push(2)
 LL.push(3)
 LL.push(4)
 LL.push(5)
+LL.push(9)
+LL.push(1)
 LL.print()
 LL.pop()
+LL.print()
+LL.popFirstElement()
 LL.print()
 
