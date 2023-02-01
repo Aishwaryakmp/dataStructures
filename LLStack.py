@@ -11,7 +11,16 @@ class linkedList:
         while(n.next!=None):
             n = n.next
         return n
-        
+    
+    def deleteInnerElement(self,data):
+        n = self.head
+        n2 = None
+        while(n.data!= data):
+            n2  = n
+            n = n.next
+        n2.next = n.next
+        return n.data
+            
     def push(self,data):
         if self.head is None:
             self.head = Node(data)
@@ -33,23 +42,44 @@ class linkedList:
         value = self.head.data
         self.head = self.head.next
         return value
-      
+    
+    #popping node 
+    def popElement(self,data):
+        n = self.head
+        #delete first element
+        if (n!= None and n.data == data):
+            p = n
+            self.head = n.next
+            return p.data
+        #delete last element
+        elif (self.findLastNode().data == data):
+            n1 = self.head
+            n2 = None
+            while (n1.next != None):
+                n2 = n1
+                n1 = n1.next
+            n2.next = None
+            return n.data
+        # #delete middle element
+        # else:
+        #     self.deleteInnerElement(data)
+            
     def print(self):
+        print("------")
         n = self.head
         while (n!=None):
             print(n.data)
             n = n.next
+        print("------")
             
 LL = linkedList()
+LL.push(1)
 LL.push(2)
 LL.push(3)
 LL.push(4)
 LL.push(5)
-LL.push(9)
-LL.push(1)
 LL.print()
-LL.pop()
+LL.popElement(5)
 LL.print()
-LL.popFirstElement()
+LL.popElement(1)
 LL.print()
-
