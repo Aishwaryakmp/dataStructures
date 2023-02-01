@@ -59,10 +59,10 @@ class linkedList:
                 n2 = n1
                 n1 = n1.next
             n2.next = None
-            return n.data
-        # #delete middle element
-        # else:
-        #     self.deleteInnerElement(data)
+            return n1.data
+        #delete middle element
+        else:
+            self.deleteInnerElement(data)
             
     def print(self):
         print("------")
@@ -82,4 +82,6 @@ LL.print()
 LL.popElement(5)
 LL.print()
 LL.popElement(1)
+LL.print()
+LL.popElement(3)
 LL.print()
